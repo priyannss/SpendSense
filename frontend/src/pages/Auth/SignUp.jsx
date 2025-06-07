@@ -89,12 +89,12 @@ const SignUp = () => {
 
                     <ProfilePhotoSelector image={profilePic} setImage={setProfilePic} />
 
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
                         <Input
                             value={fullName}
                             onChange={({ target }) => setFullName(target.value)}
                             label='Full Name'
-                            placeholder='John Doe'
+                            placeholder='Your Name'
                             type='text'
                         />
 
@@ -105,17 +105,15 @@ const SignUp = () => {
                             placeholder='your@email.com'
                             type='email'
                         />
-
-                        <div className='col-span-2'>
-                            <Input
-                                value={password}
-                                onChange={({ target }) => setPassword(target.value)}
-                                label='Password'
-                                placeholder='Min 8 characters'
-                                type='password'
-                            />
-                        </div>
                     </div>
+
+                    <Input
+                        value={password}
+                        onChange={({ target }) => setPassword(target.value)}
+                        label='Password'
+                        placeholder='Min 8 characters'
+                        type='password'
+                    />
 
                     {error && <p className='text-red-500 text-xs pb-2.5'>{error}</p>}
 
